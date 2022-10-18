@@ -2,9 +2,9 @@
 from math import sqrt
 
 # valores
-a = int(input("Qual é o valor do a: "))
-b = int(input("Qual é o valor do b: "))
-c = int(input("Qual é o valor do c: "))
+a = float(input("Qual é o valor do a: "))
+b = float(input("Qual é o valor do b: "))
+c = float(input("Qual é o valor do c: "))
 
 def baskhara(a, b, c):
     delta = ((b) ** 2) -4 * ((a) * (c))
