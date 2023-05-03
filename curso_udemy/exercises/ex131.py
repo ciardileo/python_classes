@@ -28,5 +28,5 @@ for lista in lista_de_listas_de_inteiros:
 			print(elemento)
 			break
 
-		if counter == 10 and len(numeros) == 10:
+		if counter == len(lista) == len(numeros):
 			print(-1)
