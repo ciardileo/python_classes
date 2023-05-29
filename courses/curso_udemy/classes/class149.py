@@ -1,5 +1,6 @@
 """
 tratamento de erros em Python
+try, except, finally (else)
 os erros são "ignorados" dentro do try
 podemos executar coisas diferentes dependendo do erro
 """
@@ -16,4 +17,6 @@ except Exception as error:  # podemos pegar a mensagem da exceção
 	print("Erro desconhecido")
 	print(error)
 	print(error.__class__.__name__)  # nome do erro
+finally:
+	print("Fim")
 
