@@ -27,9 +27,11 @@ with open(file_path, "w") as arquivo:
 
 	arquivo.seek(0, 0)  # move o cursor do arquivo para a linha 0 coluna 0
 
-	arquivo.writelines(("linha1\n", "linha2\n"))  # é um write que recebe um iterável como parâmetro (as linhas têm que ser quebradas manualmente)
+	arquivo.writelines(("linha1\n",
+	                    "linha2\n"))  # é um write que recebe um iterável como parâmetro (as linhas têm que ser quebradas manualmente)
 
-with open(file_path, "r", encoding="utf8") as arquivo:  # também podemos mudar a codificação padrão do arquivo para que ele aceite mais caracteres
+with open(file_path, "r",
+          encoding="utf8") as arquivo:  # também podemos mudar a codificação padrão do arquivo para que ele aceite mais caracteres
 	print(arquivo.read())  # lê o arquivo todo
 
 	arquivo.seek(0, 0)
@@ -38,14 +40,12 @@ with open(file_path, "r", encoding="utf8") as arquivo:  # também podemos mudar 
 	for linha in arquivo.readlines():  # função que retorna uma lista de todas as linhas do arquivo
 		print(linha)
 
-
 # =============================================
 
-# funções itens com arquivos do módulo OS
+# funções úteis com arquivos do módulo OS
 import os
 
 os.rename(file_path, "testando.txt")  # renomeia o arquivo, também pode ser usado para mover
 
 # os.remove(file_path)  # exclui o arquivo
 # os.unlink(file_path)  faz a mesma função do remove
-
