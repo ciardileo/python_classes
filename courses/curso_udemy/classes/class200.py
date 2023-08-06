@@ -1,5 +1,5 @@
 """
-métodos de classes em Python
+métodos em classes Python
 o self é apenas uma convenção, podemos utilizar qualquer nome, ele só precisa ser o primeiro argumento para ter sua função
 
 atributos de classe
