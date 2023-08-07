@@ -3,6 +3,12 @@ classes em Python
 classes são moldes que criam novos objetos (instâncias),
 toda classe possui métodos (funções) e atributos (dados)
 classes utilizam o PascalCase
+
+programação orientada a objetos possui 4 pilares:
+	- abstração
+	- herança
+	- encapsulamento
+	- polimorfismo
 """
 
 
