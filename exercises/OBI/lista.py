@@ -13,10 +13,11 @@ Saída
 Seu programa deve produzir uma única linha, contendo um único inteiro, o menor número de operações de contração necessárias para tornar a lista palíndroma.
 """
 
-lista = [0, 1, 3, 4, 3,  1]
 
-print(lista[1] == lista[len(lista) - 1 - lista[1]] + 1)
+lista = []
 
-# elementos = int(input())
-# for i in range(1, elementos+1):
-# 	lista.append(int(input()))
+elementos = int(input())
+for i in range(1, elementos+1):
+	lista.append(int(input()))
+
+# NÃO RESOLVIDO
