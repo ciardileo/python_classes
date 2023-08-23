@@ -13,6 +13,7 @@ retorna todas os atributos da classe em um dicionário
 
 class Carro:
 	# atributos de classe
+
 	ano_atual = 2023
 
 	def __init__(self, nome, marca, cor, ano):

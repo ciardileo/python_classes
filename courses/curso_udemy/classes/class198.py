@@ -5,10 +5,10 @@ toda classe possui métodos (funções) e atributos (dados)
 classes utilizam o PascalCase
 
 programação orientada a objetos possui 4 pilares:
-	- abstração
-	- herança
-	- encapsulamento
-	- polimorfismo
+	- abstração: classes abstratas (abc) são classes que só existem para serem herdadas e não podem ser utilizadas sozinhas
+	- herança: herdar classes para especializá-las
+	- encapsulamento: public, protected, private
+	- polimorfismo: quando dois métodos de uma classe abstrata possuem a mesma assinatura mas funções diferentes
 """
 
 

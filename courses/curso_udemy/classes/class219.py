@@ -25,15 +25,24 @@ super()
 a função super() retorna uma instância da classe pai
 ela serve para quando queremos modificar o __init__ ou um método, mas ainda mantendo as funcionalidades do pai
 dentro dos parênteses do super(), nós podemos passar uma classe diferente para receber a superior a ela
+
+é possível criar uma nova exceção criando uma classe com o nome da exceção e herdando a classe Exception
 """
 
 
+class FaltaDeDadosError(Exception):  # como criar uma exceção herdando a classe Exception
+	...
+
+
 class Pessoa:
-	def __init__(self, nome, sobrenome):
+	def __init__(self, nome=None, sobrenome=None):
 		self.nome = nome
 		self.sobrenome = sobrenome
 
 	def falar(self):
+		if self.nome is None or self.sobrenome is None or self.nome is None and self.sobrenome is None:
+			print("Faltam dados para esta pessoa")
+			return
 		print(f"Oi, meu nome é {self.nome}")
 
 
