@@ -4,7 +4,7 @@ o self é apenas uma convenção, podemos utilizar qualquer nome, ele só precis
 
 atributos de classe
 atributos de classe são variáveis que são definidas para todo o molde da classe, fora do __init__
-eles podem ser chamados com self.var
+eles não podem ser chamados com self.var
 
 __dict__
 retorna todas os atributos da classe em um dicionário
