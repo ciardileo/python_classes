@@ -18,18 +18,22 @@ docker ps -a => lista todos os containers
 """
 
 import pymysql
+import pymysql.cursors
 
 connection = pymysql.connect(  # cria uma conexão com o servidor MySQL do docker
 	host="localhost",
 	user="usuario",
 	password="senha",
-	database="base_de_dados"
+	database="base_de_dados",
+	cursorclass=pymysql.cursors.DictCursor  # podemos configurar para o fetch retornar dicionarios
 )
 
 cursor = connection.cursor()
 
 # a linguagem do SQL é quase a mesma
 # exemplo de crud:
+
+# create:
 cursor.execute(
 	"CREATE TABLE if not exists customers ( "
 	"id INT NOT NULL AUTO_INCREMENT,  "
@@ -44,7 +48,22 @@ cursor.execute(  # exeutando um insert com placeholder para evitar sql injection
 	"(nome, idade) VALUES (%s, %s)", ("Leonardo", 15)
 )
 
+lista_de_argumentos = [["Marcos", 13], ["Enzo", 23], ["Carlão", 39]]
+cursor.executemany("INSERT INTO customers (nome, idade) VALUES (%s, %s)", lista_de_argumentos)
+# podemos executar muitas queries de uma vez (o número vai depender da quantidade de parâmetros passados para os dois %s
+
+
+# read
+cursor.execute("SELECT * FROM customers WHERE id > 5 OR id = 1")
+print(*cursor.fetchall(), sep="\n")
+
+# update
+cursor.execute("UPDATE customers SET nome='noname', idade=0 WHERE id > 20")
+
+# delete
 # cursor.execute("TRUNCATE TABLE customers")  # limpa a tabela
+
+cursor.execute("DELETE FROM customers WHERE id = 22")  # deleta linha
 
 connection.commit()
 
