@@ -61,3 +61,5 @@ c1 = Cliente("Marcos", "Ribeiro", 26)
 
 p1.falar()
 c1.falar()
+
+olá
