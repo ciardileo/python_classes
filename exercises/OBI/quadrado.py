@@ -3,36 +3,38 @@ um quadrado mágico é uma matriz n x n inteiros, em que todas as linhas, coluna
 """
 
 
-def verifica_linhas_colunas():
+def verifica_quadrado_magico():
 	soma_atual = 0
-	soma = 0
-	for linha in quadrado:
-		# soma da linha
-		soma = sum(linha)
+	soma_atual2 = 0
+	# soma
+	soma = sum(quadrado[0])
 
-		# soma da coluna
-		for coluna in linha:
-			for j in range(len(quadrado)):
-				soma_atual += quadrado[j][linha.index(coluna)]
-			if soma_atual == soma:
-				soma_atual = 0
-			else:
-				return -1
+	# soma das linhas
+	for linha in quadrado:
+		if sum(linha) != soma:
+			return -1
+
+	# Soma das colunas
+	for j in range(n):
+		soma_coluna = 0
+		for i in range(n):
+			soma_coluna += quadrado[i][j]
+		if soma_coluna != soma:
+			return -1
+
+	soma_atual = 0
+
+	# soma das diagonais
+	soma_diag_principal = sum(quadrado[i][i] for i in range(n))
+	if soma_diag_principal != soma:
+		return -1
+
+	# Soma da diagonal secundária
+	soma_diag_secundaria = sum(quadrado[i][n - i - 1] for i in range(n))
+	if soma_diag_secundaria != soma:
+		return -1
 
 	return soma
-
-
-def verifica_diagonais():
-	soma1 = 0
-	soma2 = 0
-	for linha in quadrado:
-		soma1 += linha[quadrado.index(linha)]
-		soma2 += linha[-1 - quadrado.index(linha)]
-
-	if soma1 == soma2:
-		return soma1
-
-	return -1
 
 
 n = int(input())
@@ -41,10 +43,4 @@ quadrado = []
 for i in range(n):
 	quadrado.append([int(x) for x in input().split()])
 
-soma_diagonais = verifica_diagonais()
-soma_linhas_colunas = verifica_linhas_colunas()
-
-if soma_diagonais == soma_linhas_colunas and soma_diagonais != -1:
-	print(soma_diagonais)
-else:
-	print("-1")
+print(verifica_quadrado_magico())
