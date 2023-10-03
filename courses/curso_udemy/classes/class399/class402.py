@@ -2,10 +2,10 @@
 MySQL em Python
 para utilizar servidores grandes, devemos subir esses servidores em containers
 podemos utilizar o Docker para isso, pelo menos no windows é necessária fazer uma configuração
-para habilitar a emulação de linux para o servidor
+para habilitar a emulação de linux para o servidor (wsl)
 
 depois de configurar o docker, para criar um banco de dados, criamos um arquivo chamado docker-compose.yml
-e nele colocamos as configurações do nosso
+e nele colocamos as configurações do nosso bd
 
 para não deixar as variáveis de enviroment públicas (usuario, senha, host), costumamos usar um arquivo .env,
 que salva essas informações e passa para o docker-compose de maneira indireta, permitindo privacidade
