@@ -14,21 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
 
-
-def blog(request):
-	return HttpResponse("blog")
-
-
-def home(request):
-	return HttpResponse("home")
-
+# imports das views externas
+from home import views as home_views
+from blog import views as blog_views
 
 urlpatterns = [
-	path('admin/', admin.site.urls),
-	path('blog/', blog),  # cria uma página blog/ executando a view blog()
-	path('', home),  # linka uma view para a página home/root
+	path('admin/', admin.site.urls),  # linka uma view para a página home/root
+	path('', home_views.home),  # cria uma subpágina home e blog e linka o acesso deles com a função da view
+	path('blog/', blog_views.blog)
 ]
