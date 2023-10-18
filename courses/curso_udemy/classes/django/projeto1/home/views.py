@@ -7,5 +7,5 @@ from django.http import HttpResponse
 def home(request):
 	print("home")
 	return render(
-		request, "home.html"
+		request, "html/index.html"
 	)
