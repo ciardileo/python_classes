@@ -1,3 +1,2 @@
-{% extends "html/index.html" %}
-
-{% block texto %} Mudei O Texto{% endblock texto %}
+{% extends 'html/index.html' %}
+{% block texto %}{{title_home}}{% endblock texto %} <!-- as chaves duplas servem para colocar um valor de context, que é como uma variável -->

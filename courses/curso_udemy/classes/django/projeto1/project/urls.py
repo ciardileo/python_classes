@@ -24,6 +24,6 @@ from blog import views as blog_views
 
 urlpatterns = [
 	path('admin/', admin.site.urls),  # linka uma view para a página home/root
-	path('', home_views.home),  # cria uma subpágina home e blog e linka o acesso deles com a função da view
-	path('blog/', blog_views.blog)
+	path('', home_views.home, name="home"),  # cria uma subpágina home e blog e linka o acesso deles com a função da view
+	path('blog/', blog_views.blog, name="blog")
 ]

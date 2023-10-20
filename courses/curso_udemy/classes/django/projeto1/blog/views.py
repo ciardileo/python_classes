@@ -4,8 +4,12 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+context = {
+	'title_blog': "Este é o título do blog"
+}
+
 def blog(request):
 	print("home")
 	return render(  # renderiza um arquivo html para a view
-		request, "blog.html"
+		request, "blog.html", context
 	)
