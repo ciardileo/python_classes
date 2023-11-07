@@ -1,8 +1,10 @@
 <article>
-    <h2 class="post_title">
-        Lorem ipsum
-    </h2>
-    <div class="post_content">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae laboriosam modi nesciunt itaque, quisquam ex quaerat nobis reprehenderit commodi ducimus quis obcaecati, cumque laborum natus voluptatum placeat consectetur, ipsam harum.
-    </div>
+	<h2 class="post_title">
+
+		<a href="{% url "post" post.id %}">{{post.title}}</a>
+	</h2>
+	<div class="post_content">
+		<!-- para acessar um item de um dicionário utilizamos ponto -->
+		{{post.body}}
+	</div>
 </article>

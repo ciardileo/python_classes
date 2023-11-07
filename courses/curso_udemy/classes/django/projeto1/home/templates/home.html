@@ -1,2 +1,6 @@
 {% extends 'html/index.html' %}
-{% block texto %}{{title_home}}{% endblock texto %} <!-- as chaves duplas servem para colocar um valor de context, que é como uma variável -->
+
+<!-- só coloca o título da home se ela tiver sido passada no context manager -->
+{% if title_home %}
+    {% block texto %}{{title_home}}{% endblock texto %}
+{% endif %} <!-- as chaves duplas servem para colocar um valor de context, que é como uma variável -->

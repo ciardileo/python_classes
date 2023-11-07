@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
 }
 
 body{
@@ -51,4 +50,21 @@ main#posts{
 .post_title{
     font-size: 30px;
     margin-bottom: 5px;
+}
+
+a{
+    color: black;
+}
+
+.post_h1{
+    font-size: 60px;
+    text-align: center;
+    margin: 20px;
+}
+
+.post_body{
+    display: block;
+    margin: auto;
+    width: 500px;
+    font-size: 20px;
 }

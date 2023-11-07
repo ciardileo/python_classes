@@ -9,14 +9,32 @@
 <body>
     {% include "html/header.html" %}
     <h1>{{title_blog}}</h1>
-    <h3>Bem vindo ao blog</h3>
+
+
+    <!-- exemplo de estrutura de decisão em django html-->
+    {% if  tipo == 1 %}
+
+        <h3>Você escolheu o tipo 1</h3>
+    
+    {% elif  tipo == 2 %}
+
+        <h3>Você será testado</h3>
+
+    {% else %}
+
+        <h3>Bem vindo ao meu blog</h3>
+    
+    {% endif %}
 
     <main id="posts">
+
+    
+    <!-- adiciona um postblock.html para cada post da lista posts, que vem do context manager 
+    o post é passado para o include, então podemos usar variáveis do context dentro do postblock.html -->
+    {% for post in posts %}
         {% include "html/postblock.html" %}
-        {% include "html/postblock.html" %}
-        {% include "html/postblock.html" %}
-        {% include "html/postblock.html" %}
-        {% include "html/postblock.html" %}
+    {% endfor %}
+
     </main>
 
 </body>
