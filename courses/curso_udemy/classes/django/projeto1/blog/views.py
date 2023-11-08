@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 
 
 # arquivo com json dos blogs
@@ -16,7 +16,7 @@ def blog(request):
 	context = {
 		'title_blog': "Este é o título do blog",
 		'posts': posts,
-		'tipo': 68
+		'tipo': 1
 	}
  
  
@@ -27,13 +27,20 @@ def blog(request):
  
 def post(request, id):
 	print(f"post {id}")
+	found = False
  
 	for post in posts:
 		if post['id'] == id:
+			found = True
 			context = {
 				'title': post['title'],
 				'body': post['body']
 			}
+			break
+
+
+	if not found:
+		raise Http404("Este post não existe!")
  
  
 	return render(  # renderiza um arquivo html para a view

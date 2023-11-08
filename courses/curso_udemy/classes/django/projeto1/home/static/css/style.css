@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body{
@@ -54,6 +55,11 @@ main#posts{
 
 a{
     color: black;
+    transition: 0.5s;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 .post_h1{
