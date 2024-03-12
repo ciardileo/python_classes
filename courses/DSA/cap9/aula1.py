@@ -13,6 +13,7 @@ print(array1.shape)
 # tipo de dado
 print(array1.dtype)
 
+
 # fatiamento e alteração
 array1[0] = 12
 print(array1[2:4])

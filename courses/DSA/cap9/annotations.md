@@ -15,8 +15,8 @@ As matrizes não deixam de ser arrays. São utilizadas muito na criação de mod
 - numpy.diag()
 - numpy.zeros()
 - numpy.arange()
-- numpy.eye()
-- numpy.linspace()
+- numpy.eye() - cria uma matriz com 1 na diagonal
+- numpy.linspace() - cria uma matriz de tantos números igualmente espaçados
 - numpy.logspace()
 - numpy.ones()
 - numpy.size
@@ -24,7 +24,7 @@ As matrizes não deixam de ser arrays. São utilizadas muito na criação de mod
 - array.nbytes
 - numpy.random.rand()
 - numpy.mean()
-- array.flatten()
+- array.flatten() - deixar um array multidimensional unidimensional
 - numpy.repeat()
 - numpy.tile()
 - numpy.copy()
@@ -40,8 +40,8 @@ As matrizes não deixam de ser arrays. São utilizadas muito na criação de mod
 Desvio padrão: é a raiz quadrada da fórmula da variância, ele indica o quão distantes os valores de um conjunto estão da média. Quanto maior ele for, mais variados são os dados.
 ## funções e atributos
 - numpy.mean()
-- numpy.std()
-- numpy.var()
+- numpy.std() - desvio padrão
+- numpy.var() - variabilidade
 - numpy.sum()
 - numpy.prod()
 - numpy.cumsum()
