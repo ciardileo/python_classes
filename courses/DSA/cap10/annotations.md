@@ -9,10 +9,18 @@ Dataframes são tabelas de linha e coluna contendo dados
 
 ## funções e atributos
 - pd.DataFrame(, dados **columns, **index)
+- pd.read_csv()
 - df.head()
+- df.tail()
 - df.dtypes
 - df.columns
 - df.values
 - df.filter()
 - df.describe()
 - df.isna()
+- df.fillna()
+- df.value_counts()
+- df.shape
+- df.isin()
+- df.sample()
+- df.groupby()
