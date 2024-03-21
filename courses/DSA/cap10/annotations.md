@@ -24,3 +24,7 @@ Dataframes são tabelas de linha e coluna contendo dados
 - df.isin()
 - df.sample()
 - df.groupby()
+- df.agg()
+- column.str.startswith()
+- column.str.endswith()
+- column.value_counts()
