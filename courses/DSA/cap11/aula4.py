@@ -16,6 +16,8 @@ for ax in axes.flat:  # tranforma o array de matriz 2,2 para vetor de 4
     ax.plot(x, y, 'r')
     ax.set_xlabel('x')
     ax.set_ylabel('y')
+    ax.grid(color='b', alpha=0.7, linestyle='dashed', linewidth=0.8)
+    # ax.set_yscale('log')  # define uma secola logaritmica
     ax.set_title(f'Título {np.where(axes.flat == ax)[0][0] + 1}')
         
 fig.tight_layout()

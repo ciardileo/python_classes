@@ -9,6 +9,9 @@
 ### Tipos de gráficos
 - Barra;
 - Dispersão - usado para medir duas variáveis diferentes;
-- Histograma;
+- Histograma - mede uma única variável quantitativa contínua;
 - Área - mostra uma variável (y) ao longo do tempo (x);
 - Pizza;
+
+# Seaborn
+Baseado no matplotlib, porém específico para estatística
