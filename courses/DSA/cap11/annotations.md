@@ -15,3 +15,5 @@
 
 # Seaborn
 Baseado no matplotlib, porém específico para estatística
+## Funções
+- sea.lmplot()
