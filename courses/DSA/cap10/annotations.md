@@ -19,15 +19,19 @@ Dataframes são tabelas de linha e coluna contendo dados
 - df.describe()
 - df.isna()
 - df.fillna()
-- df.value_counts()
-- df.shape
+- df.value_counts(by="Coluna") -> conta os valores de uma certa coluna
+- df.shape -> tamanho do dataframe
 - df.isin()
 - df.sample()
 - df.groupby()
-- df.agg()
-- df.index
-- df.values
-- df.tolist()
+- column.mean()
+- column.count()
+- columns.std()
+- groupby().agg() -> para colocar várias medidas em um groupby só
+- df.index -> retorna só os indexes
+- df.items() -> retorna o dataframe em lista
+- df.tolist() -> tranforma o dataframe em lista
+- series.reset_index() -> para transformar um series em dataframe depois de um groupby
 - column.str.startswith()
 - column.str.endswith()
 - column.value_counts()
