@@ -1,12 +1,10 @@
 """
-aulão sobre ordenações
+selection sorting
 """
 
 # imports 
-
 import random
 
-# selection sort
 """
 funciona com uma lógica de ponteiro:
 pegue o primeiro número da lista e comece a comparar com todo o resto, ao final da iteração, caso tenha achado um número menor que o primeiro, troque o primeiro de posicão com esse menor número
