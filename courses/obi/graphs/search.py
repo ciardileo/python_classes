@@ -28,4 +28,36 @@ def dfs(graph, start, visited=None):
 
     return visited
 
-dfs(graph, 'A')
+visited_dfs = dfs(graph, 'A')
+print(visited_dfs)
+
+print('-=' * 25)
+
+# BFS algorithm
+import collections
+
+# BFS algorithm
+def bfs(graph, root):
+
+    visited, queue = set(), collections.deque([root])
+    visited.add(root)
+
+    while queue:
+
+        # Dequeue a vertex from queue
+        vertex = queue.popleft()
+        print(str(vertex) + " ", end="")
+
+        # If not visited, mark it as visited, and
+        # enqueue it
+        for neighbour in graph[vertex]:
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+                
+        print()
+        
+    return visited
+        
+visited_bfs = bfs(graph, 'A')
+print(visited_bfs)
