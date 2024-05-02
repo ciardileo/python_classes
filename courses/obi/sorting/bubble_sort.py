@@ -18,7 +18,7 @@ def bubble_sort(array):
         array[j], array[j+1] = array[j+1], array[j]
 
         swapped = True
-          
+        
     # no swapping means the array is already sorted
     # so no need for further comparison
     if not swapped:
