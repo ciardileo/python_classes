@@ -15,7 +15,7 @@ O coeficiente de correlação é uma medida estatística que indica a força e d
 A Regressão Linear é uma técnica estátisca básica usada para modelar a relação entre uma variável alvo e uma ou mais variáveis preditoras.
 Regressão Linear Simples: 1 variável
 Regressão Linear Múltipla: 2+ variáveis
-Y = a + bX + e
+Y = a + bX + erros
 Isso é uma equação padrão que tenta modelar a relação dos dados, com bastantes dados históricos, conseguimos treinar o modelo para descobrir os valores de a, b e e que melhor preveem os dados.
 
 Estatística: tenta entender e mensurar a relação entre dados
