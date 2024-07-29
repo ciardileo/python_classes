@@ -1,57 +1,75 @@
 """
-mapa: n colunas, m linhas
-linhas: oeste-leste
-colunas: norte-sul
-foram instaladas k cameras, que podem ser apontadas para várias posições
+espaço M x N (numerado de 1 a N - 0 a N - 1 no código)
+K câmeras
+As câmeras instaladas observam alguma direção até o final do espaço
+A entrada está no 0, 0 e a saída em N, M
+Determinar se é possível entrar e sair sem ser visto pelas câmeras
+
+Caso L:
+	para cada espaço da posição da câmera até o final do mapa, preencher com 1
+Caso O:
+	para cada espaço do começo da coluna até a posição da câmera, preencher com 1
+Caso N:
+	para cada espaço do começo da linha até a posição da câmera, preencher com 1
+Caso S:
+	para cada espaço da posição da câmera até o final da linha, preencher com 1
+
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
 """
 
 
-def dfs(col, lin):
-	mark[lin][col] = 1
-	try:
-		if 1 <= col - 1 <= m and mark[lin][col - 1] == 0 and mapa[lin][col - 1] == 0:
-			dfs(col - 1, lin)
-		if 1 <= col + 1 <= m and mark[lin][col + 1] == 0 and mapa[lin][col + 1] == 0:
-			dfs(col + 1, lin)
-		if 1 <= lin - 1 <= m and mark[lin - 1][col] == 0 and mapa[lin - 1][col] == 0:
-			dfs(col, lin - 1)
-		if lin + 1 >= 1 and col + 1 <= m and mark[lin + 1][col] == 0 and mapa[lin + 1][col] == 0:
-			dfs(col, lin + 1)
-	except:
-		pass
+def main():
+
+	# monta o mapa posicionando as câmeras
+	def camera(y, x, d):
+		match d:
+			case "L":
+				for i in range(x, N):
+					cam_map[y][i] = 1
+
+			case "O":
+				for i in range(x + 1):
+					cam_map[y][i] = 1
+
+			case "N":
+				for i in range(y + 1):
+					cam_map[i][x] = 1
+
+			case "S":
+				for i in range(y, M):
+					cam_map[i][x] = 1
+
+	def dfs(row, col):
+		if row == M - 1 and col == N - 1:
+			return "S"
+
+		for x, y in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+			new_row, new_col = x + row, y + col
+			if 0 <= new_row < M and 0 <= new_col < N:
+				if cam_map[new_row][new_col] == 0:
+					cam_map[new_row][new_col] = 1
+					if dfs(new_row, new_col) == "S":
+						return "S"
+
+		return "N"
+
+	# colunas, linhas e cameras
+	N, M, K = [int(x) for x in input().split()]
+
+	# 1 - espaço vigiado, 0 - espaço livre
+	cam_map = [[0] * N for _ in range(M)]
+
+	for _ in range(K):
+		col, row, direction = input().split()
+		camera(int(row) - 1, int(col) - 1, direction)
+
+	print(dfs(0, 0, ))
 
 
-def marcar_camera(linha, coluna, direcao):
-	if direcao == "S":
-		for cel in range(0, m - linha):
-			mapa[linha + cel][coluna] = 1
-	elif direcao == "N":
-		for cel in range(0, linha + 1):
-			mapa[linha - cel][coluna] = 1
-	elif direcao == "L":
-		for cel in range(0, n - coluna):
-			mapa[linha][coluna + cel] = 1
-	elif direcao == "O":
-		for cel in range(0, coluna + 1):
-			mapa[linha][coluna - cel] = 1
-
-
-n, m, k = [int(x) for x in input().split()]
-
-mapa = [[0] * n for x in range(1, m + 1)]
-mark = [[0] * n for x in range(1, m + 1)]
-
-for i in range(1, k + 1):
-	c, l, d = [x for x in input().split()]
-	marcar_camera(int(l) - 1, int(c) - 1, d)
-
-print(*mapa, sep='\n')
-
-if mapa[0][0] == 1:
-	print("N")
-else:
-	dfs(0, 0)
-	if mark[-1][-1] == 1:
-		print("S")
-	else:
-		print("N")
+if __name__ == "__main__":
+	main()
