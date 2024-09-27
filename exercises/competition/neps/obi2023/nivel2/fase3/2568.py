@@ -1,13 +1,20 @@
 """
+mecanicos devem estar organizado dos mais lentos para os mais rapidos
+e os carros devem estar ao contrário
 
+um mecanico lento sempre deve pegar um carro rapido
 """
 
 def main():
-    n_carros, n_mecanicos = [int(x) for x in input().split()]
+    N, M = [int(x) for x in input().split()]  # carros e mecânicos
     
     carros = [int(x) for x in input().split()]
-
+    carros.sort()
+    
     mecanicos = [int(x) for x in input().split()]
+    mecanicos.sort(reverse=True)
+    
+    
     
     
 
