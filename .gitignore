@@ -4,3 +4,30 @@
 mysql_399
 venv
 .idea
+
+# Ignorar arquivos do VS Code
+.vscode/
+*.code-workspace
+
+# Ignorar arquivos do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Ignorar ambientes virtuais (venv)
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*.env
+
+# Ignorar arquivos do Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb

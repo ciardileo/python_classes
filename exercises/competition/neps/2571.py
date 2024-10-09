@@ -11,20 +11,24 @@ def main():
         distances = {node: float("inf") for node in range(1, N + 1)}
         
         distances[start] = 0
-        
-        pq = [(0, start)]
+        k
+        # sistema, distancia atual, node inicial
+        pq = [(-1, 0, start)]
         
         while pq:
-            current_distance, current_node = heapq.heappop(pq)
+            current_system, current_distance, current_node = heapq.heappop(pq)
             
-            if current_distance < distances[current_node]:
+            if current_distance > distances[current_node]:
+                continue
                 
-                for neighbor, weight in graph[current_node]:
-                    new_distance = current_distance + weight
-                    
-                    if new_distance < distances[neighbor]:
-                        distances[neighbor] = new_distance
-                        heapq.heappush(pq, (new_distance, neighbor))
+            for neighbor, system in graph[current_node]:
+                new_distance = current_distance
+                if system != current_system:
+                    new_distance = current_distance + passagens[system]
+                
+                if new_distance < distances[neighbor]:
+                    distances[neighbor] = new_distance
+                    heapq.heappush(pq, (system, new_distance, neighbor))
                         
         return distances
 
@@ -38,8 +42,8 @@ def main():
         v, u, t = [int(x) for x in input().split()]  # estacao 1, estacao 2, sistema
         
         # adiciona a conexão no grafo
-        grafo[v].append((u, passagens[t - 1]))
-        grafo[u].append((v, passagens[t - 1]))
+        grafo[v].append((u, t - 1))
+        grafo[u].append((v, t - 1))
         
     a, b = [int(x) for x in input().split()]  # estação inicial e final
     
