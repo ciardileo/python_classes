@@ -30,4 +30,3 @@ venv.bak/
 
 # Ignorar arquivos do Jupyter Notebook
 .ipynb_checkpoints/
-*.ipynb
